@@ -16,11 +16,18 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(ellipse at 50% 30%, #21113c 0%, #100b1c 42%, #090611 78%);
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    #21113c 0%,
+    #100b1c 42%,
+    #090611 78%
+  );
   color: #fff;
   font-family: Inter, Arial, sans-serif;
   overflow-x: hidden;
 }
+
+/* Background glow */
 
 .glow {
   position: fixed;
@@ -45,12 +52,15 @@ body {
   bottom: -170px;
 }
 
+/* Header */
+
 .topbar {
-  height: 88px;
+  min-height: 88px;
   padding: 0 8%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 15px;
   border-bottom: 1px solid #ffffff18;
   background: #09061155;
   backdrop-filter: blur(12px);
@@ -77,6 +87,8 @@ body {
   font-weight: 700;
 }
 
+/* Main */
+
 .home {
   width: min(1180px, 88%);
   min-height: calc(100vh - 88px);
@@ -84,6 +96,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* Intro */
 
 .intro {
   text-align: center;
@@ -114,6 +128,8 @@ h1 span {
   margin: 0;
 }
 
+/* Profile cards */
+
 .profile-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -126,14 +142,21 @@ h1 span {
   min-height: 230px;
   display: flex;
   align-items: center;
-  gap: 30px;
-  padding: 30px;
-  background: linear-gradient(135deg, #211632ee, #100c1dee);
+  gap: 22px;
+  padding: 25px;
+  background: linear-gradient(
+    135deg,
+    #211632ee,
+    #100c1dee
+  );
   border: 1px solid #ffffff20;
   border-radius: 26px;
   text-decoration: none;
   color: #fff;
-  transition: transform .25s, border-color .25s, box-shadow .25s;
+  transition:
+    transform .25s,
+    border-color .25s,
+    box-shadow .25s;
 }
 
 .profile-card:hover {
@@ -142,19 +165,24 @@ h1 span {
   box-shadow: 0 22px 60px #6e35bb30;
 }
 
+/* Profile picture */
+
 .profile-card img {
-  width: 160px;
-  height: 160px;
-  flex: 0 0 160px;
+  width: 140px;
+  height: 140px;
+  flex: 0 0 140px;
   object-fit: cover;
   border-radius: 22px;
   border: 2px solid #a66cff88;
   box-shadow: 0 8px 30px #0006;
 }
 
+/* Card text area */
+
 .profile-card > div {
+  flex: 1 1 0;
   min-width: 0;
-  flex: 1;
+  max-width: 100%;
 }
 
 .card-label {
@@ -163,13 +191,20 @@ h1 span {
 }
 
 .profile-card h2 {
-  font-size: clamp(19px, 2.2vw, 30px);
-  margin: 0 0 24px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(17px, 2vw, 25px);
+  line-height: 1.3;
+  margin: 0 0 20px;
   letter-spacing: -.6px;
+  white-space: normal;
   overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .view {
+  display: inline-block;
   font-size: 14px;
   color: #c7b4e7;
 }
@@ -179,6 +214,8 @@ h1 span {
   margin-left: 7px;
 }
 
+/* Footer */
+
 footer {
   text-align: center;
   color: #70677d;
@@ -187,9 +224,11 @@ footer {
   margin-top: auto;
 }
 
-@media (max-width: 760px) {
+/* Tablet and mobile */
+
+@media (max-width: 1100px) {
   .topbar {
-    height: 72px;
+    min-height: 72px;
     padding: 0 6%;
   }
 
@@ -215,14 +254,14 @@ footer {
   }
 
   .profile-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
   }
 
   .profile-card {
     min-height: 170px;
     padding: 20px;
-    gap: 20px;
+    gap: 22px;
     border-radius: 20px;
   }
 
@@ -242,6 +281,8 @@ footer {
     padding: 60px 0 24px;
   }
 }
+
+/* Small phones */
 
 @media (max-width: 390px) {
   .profile-card {
